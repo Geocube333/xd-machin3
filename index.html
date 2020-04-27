@@ -1,5 +1,20 @@
 <html>
-  <body onload='fetch()'>
+  <head>
+    <style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+</script>
+ <script> 
+        /* Add "https://api.ipify.org?format=json" statement 
+           this will communicate with the ipify servers in 
+           order to retrieve the IP address $.getJSON will 
+           load JSON-encoded data from the server using a 
+           GET HTTP request */ 
+  $.getJSON("https://api.ipify.org?format=json", function(data) { 
+            /*Setting text of element P with id gfg*/
+    $("#here").html(data.ip); 
+  }) 
+  </head>
+  <body>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="/__/firebase/7.14.2/firebase-app.js"></script>
 
@@ -48,17 +63,3 @@ div.yes p{
   animation-direction: alternate;
   animation-iteration-count: infinite;
 }
-<style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
-</script>
-
- <script> 
-        /* Add "https://api.ipify.org?format=json" statement 
-           this will communicate with the ipify servers in 
-           order to retrieve the IP address $.getJSON will 
-           load JSON-encoded data from the server using a 
-           GET HTTP request */ 
-  $.getJSON("https://api.ipify.org?format=json", function(data) { 
-            /*Setting text of element P with id gfg*/
-    $("#here").html(data.ip); 
-  }) 
